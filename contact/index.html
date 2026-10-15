@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — One Day Systems</title>
+  <meta name="description" content="Tell One Day Systems what you have been putting off. Email stan@onedaysystems.com or expert@onedaysystems.com. De Soto, Kansas." />
+  <link rel="canonical" href="https://onedaysystems.com/contact/" />
+  <meta property="og:title" content="Contact — One Day Systems" />
+  <meta property="og:description" content="Tell One Day Systems what you have been putting off. Email stan@onedaysystems.com or expert@onedaysystems.com. De Soto, Kansas." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://onedaysystems.com/contact/" />
+  <meta name="theme-color" content="#071e30" />
+  <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" aria-label="One Day Systems, home"><img class="logo" src="/logo.svg" alt="One Day Systems" /></a>
+    <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
+      <span class="sr-only">Menu</span>
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/services/">Services</a>
+      <a href="/how-we-work/">How we work</a>
+      <a href="/about/">About</a>
+      <a href="/contact/" aria-current="page">Contact</a>
+      <a class="btn" href="https://calendar.app.google/HEjFgm7BNRwYn7HL8">Schedule a time</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="kicker">Contact</p>
+      <h1>Tell us what you’ve been putting off.</h1>
+      <p class="lede" style="color:var(--muted)">One Day Systems takes on the tech you keep putting off until “one day.” Start with the piece that has been waiting.</p>
+    </div>
+  </section>
+  <section class="section" style="padding-top:12px">
+    <div class="wrap split">
+      <form id="contact-form" action="mailto:stan@onedaysystems.com" method="post" enctype="text/plain">
+        <label>Name
+          <input name="name" type="text" autocomplete="name" required />
+        </label>
+        <label>Email
+          <input name="email" type="email" autocomplete="email" required />
+        </label>
+        <label>What you’ve been putting off
+          <textarea name="message" required placeholder="The project, the room, the system, the tool."></textarea>
+        </label>
+        <button class="btn" type="submit">Email Stan</button>
+        <p class="fine">This opens your email app to stan@onedaysystems.com. Nothing is stored on this site.</p>
+      </form>
+      <aside class="aside">
+        <h2>Direct</h2>
+        <p><a href="mailto:stan@onedaysystems.com">stan@onedaysystems.com</a></p>
+        <p><a href="mailto:expert@onedaysystems.com">expert@onedaysystems.com</a></p>
+        <p>Office and remit<br />De Soto, Kansas</p>
+        <p><a href="https://calendar.app.google/HEjFgm7BNRwYn7HL8">Schedule a time</a> for a conversation.</p>
+      </aside>
+    </div>
+  </section>
+</main>
+<script>
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var data = new FormData(e.target);
+    var body = "Name: " + data.get("name") + "\nEmail: " + data.get("email") + "\n\n" + data.get("message");
+    window.location.href = "mailto:stan@onedaysystems.com?subject=" + encodeURIComponent("Something we have been putting off") + "&body=" + encodeURIComponent(body);
+  });
+</script>
+<footer class="site-footer">
+  <div class="wrap foot">
+    <div>
+      <strong>One Day Systems</strong>
+      <p>One Day Systems takes on the tech you keep putting off until “one day.”</p>
+    </div>
+    <div>
+      <p><a href="mailto:stan@onedaysystems.com">stan@onedaysystems.com</a></p>
+      <p><a href="mailto:expert@onedaysystems.com">expert@onedaysystems.com</a></p>
+      <p>De Soto, Kansas</p>
+    </div>
+    <div>
+      <div class="legal-links">
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+      </div>
+      <p class="copy">© 2026 One Day Systems LLC</p>
+    </div>
+  </div>
+</footer>
+<script src="/site.js"></script>
+</body>
+</html>

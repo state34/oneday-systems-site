@@ -22,6 +22,98 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
+<!-- TODO: telephone — no public phone number is in the repo. Do not invent one. Add a telephone property on the ProfessionalService node (https://onedaysystems.com/#business) when Stan supplies it. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://onedaysystems.com/#business",
+      "name": "One Day Systems",
+      "legalName": "One Day Systems LLC",
+      "url": "https://onedaysystems.com",
+      "email": "stan@onedaysystems.com",
+      "logo": "https://onedaysystems.com/assets/brand/OneDaySystemsColor-on-white.png",
+      "image": "https://onedaysystems.com/assets/brand/OneDaySystemsColor-on-white.png",
+      "founder": {
+        "@id": "https://onedaysystems.com/about/#stan-nice"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "De Soto",
+        "addressRegion": "KS",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Kansas City"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Kansas City metro"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Johnson County"
+        },
+        {
+          "@type": "City",
+          "name": "Overland Park"
+        },
+        {
+          "@type": "City",
+          "name": "Olathe"
+        },
+        {
+          "@type": "City",
+          "name": "Lenexa"
+        },
+        {
+          "@type": "City",
+          "name": "Lawrence"
+        },
+        {
+          "@type": "State",
+          "name": "Kansas"
+        },
+        {
+          "@type": "State",
+          "name": "Missouri"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://onedaysystems.com/about/#stan-nice",
+      "name": "Stan Nice",
+      "jobTitle": "Founder",
+      "url": "https://onedaysystems.com/about/",
+      "worksFor": {
+        "@id": "https://onedaysystems.com/#business"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://onedaysystems.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Terms",
+          "item": "https://onedaysystems.com/terms/"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -47,6 +139,7 @@
     <div class="wrap-s">
       <p class="kicker">Legal</p>
       <h1>Terms</h1>
+      <p class="answer">One Day Systems is a technology consulting firm serving the Kansas City metro that evaluates, designs, integrates and deploys IT, AV, communications, security, hardware and software for schools, businesses, government and industrial sites.</p>
       <p class="intro">These terms cover the public website of One Day Systems LLC, De Soto, Kansas.</p>
     </div>
   </section>

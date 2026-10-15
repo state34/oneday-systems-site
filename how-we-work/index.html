@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>How we work — One Day Systems</title>
-  <meta name="description" content="Evaluate, design, integrate, and deploy. One Day Systems moves technology quickly — without pretending the work finishes overnight." />
+  <title>How One Day Systems Works | Evaluate, Design, Integrate, Deploy</title>
+  <meta name="description" content="Small-team technology consulting for KC: evaluate, design, integrate, and deploy IT, AV, security and communications." />
   <link rel="canonical" href="https://onedaysystems.com/how-we-work/" />
-  <meta property="og:title" content="How we work — One Day Systems" />
-  <meta property="og:description" content="Evaluate, design, integrate, and deploy. One Day Systems moves technology quickly — without pretending the work finishes overnight." />
+  <meta property="og:title" content="How One Day Systems Works | Evaluate, Design, Integrate, Deploy" />
+  <meta property="og:description" content="Small-team technology consulting for KC: evaluate, design, integrate, and deploy IT, AV, security and communications." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://onedaysystems.com/how-we-work/" />
   <meta name="theme-color" content="#071e30" />
@@ -22,6 +22,98 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
+<!-- TODO: telephone — no public phone number is in the repo. Do not invent one. Add a telephone property on the ProfessionalService node (https://onedaysystems.com/#business) when Stan supplies it. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://onedaysystems.com/#business",
+      "name": "One Day Systems",
+      "legalName": "One Day Systems LLC",
+      "url": "https://onedaysystems.com",
+      "email": "stan@onedaysystems.com",
+      "logo": "https://onedaysystems.com/assets/brand/OneDaySystemsColor-on-white.png",
+      "image": "https://onedaysystems.com/assets/brand/OneDaySystemsColor-on-white.png",
+      "founder": {
+        "@id": "https://onedaysystems.com/about/#stan-nice"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "De Soto",
+        "addressRegion": "KS",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Kansas City"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Kansas City metro"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Johnson County"
+        },
+        {
+          "@type": "City",
+          "name": "Overland Park"
+        },
+        {
+          "@type": "City",
+          "name": "Olathe"
+        },
+        {
+          "@type": "City",
+          "name": "Lenexa"
+        },
+        {
+          "@type": "City",
+          "name": "Lawrence"
+        },
+        {
+          "@type": "State",
+          "name": "Kansas"
+        },
+        {
+          "@type": "State",
+          "name": "Missouri"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://onedaysystems.com/about/#stan-nice",
+      "name": "Stan Nice",
+      "jobTitle": "Founder",
+      "url": "https://onedaysystems.com/about/",
+      "worksFor": {
+        "@id": "https://onedaysystems.com/#business"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://onedaysystems.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "How we work",
+          "item": "https://onedaysystems.com/how-we-work/"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -46,7 +138,9 @@
   <section class="page-hero">
     <div class="wrap">
       <p class="kicker">How we work</p>
-      <h1>Evaluate. Design. Integrate. Deploy.</h1>
+      <h1>How we work</h1>
+      <p class="lede" style="color:var(--muted);max-width:54ch">Evaluate. Design. Integrate. Deploy.</p>
+      <p class="answer">One Day Systems is a technology consulting firm serving the Kansas City metro. The work is evaluate, design, integrate, and deploy — IT, AV, communications, security, hardware, and software.</p>
       <p class="lede" style="color:var(--muted);max-width:54ch">We move quickly. We do not pretend a building, a network, or a company goes live between breakfast and lunch. Speed is a sequence: know the work, decide the design, connect the pieces, put it in service.</p>
     </div>
   </section>

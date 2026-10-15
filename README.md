@@ -43,3 +43,6 @@ No `wrangler.toml`. Connect the Git repo; do not add a build.
 - stan@onedaysystems.com
 - expert@onedaysystems.com
 - Office and remit: De Soto, Kansas
+
+- Public phone: none on the site. TODO for Stan. Do not invent a number.
+- `sitemap.xml` and `llms.txt` are at the site root. `robots.txt` points at the sitemap and does not disallow GPTBot, PerplexityBot, Google-Extended, or OAI-SearchBot.

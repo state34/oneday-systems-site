@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AV — One Day Systems</title>
-  <meta name="description" content="AV for rooms and events — systems that start with the meeting, not with the one person who knows the ritual." />
+  <title>Conference Room &amp; AV Integration in Kansas City / Overland Park | One Day Systems</title>
+  <meta name="description" content="Conference rooms, classrooms and event AV designed, installed and supported across KC metro, KS &amp; MO." />
   <link rel="canonical" href="https://onedaysystems.com/services/av/" />
-  <meta property="og:title" content="AV — One Day Systems" />
-  <meta property="og:description" content="AV for rooms and events — systems that start with the meeting, not with the one person who knows the ritual." />
+  <meta property="og:title" content="Conference Room &amp; AV Integration in Kansas City / Overland Park | One Day Systems" />
+  <meta property="og:description" content="Conference rooms, classrooms and event AV designed, installed and supported across KC metro, KS &amp; MO." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://onedaysystems.com/services/av/" />
   <meta name="theme-color" content="#071e30" />
@@ -22,6 +22,174 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
+<!-- TODO: telephone — no public phone number is in the repo. Do not invent one. Add a telephone property on the ProfessionalService node (https://onedaysystems.com/#business) when Stan supplies it. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://onedaysystems.com/#business",
+      "name": "One Day Systems",
+      "legalName": "One Day Systems LLC",
+      "url": "https://onedaysystems.com",
+      "email": "stan@onedaysystems.com",
+      "logo": "https://onedaysystems.com/assets/brand/OneDaySystemsColor-on-white.png",
+      "image": "https://onedaysystems.com/assets/brand/OneDaySystemsColor-on-white.png",
+      "founder": {
+        "@id": "https://onedaysystems.com/about/#stan-nice"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "De Soto",
+        "addressRegion": "KS",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Kansas City"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Kansas City metro"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Johnson County"
+        },
+        {
+          "@type": "City",
+          "name": "Overland Park"
+        },
+        {
+          "@type": "City",
+          "name": "Olathe"
+        },
+        {
+          "@type": "City",
+          "name": "Lenexa"
+        },
+        {
+          "@type": "City",
+          "name": "Lawrence"
+        },
+        {
+          "@type": "State",
+          "name": "Kansas"
+        },
+        {
+          "@type": "State",
+          "name": "Missouri"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://onedaysystems.com/about/#stan-nice",
+      "name": "Stan Nice",
+      "jobTitle": "Founder",
+      "url": "https://onedaysystems.com/about/",
+      "worksFor": {
+        "@id": "https://onedaysystems.com/#business"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://onedaysystems.com/services/av/#service",
+      "name": "Conference room and AV integration",
+      "serviceType": "AV integration",
+      "url": "https://onedaysystems.com/services/av/",
+      "provider": {
+        "@id": "https://onedaysystems.com/#business"
+      },
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Kansas City metro"
+      },
+      "description": "Conference room and AV integration for schools and businesses in the Kansas City metro."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://onedaysystems.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://onedaysystems.com/services/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AV",
+          "item": "https://onedaysystems.com/services/av/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://onedaysystems.com/services/av/#faq",
+      "url": "https://onedaysystems.com/services/av/",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does a conference room AV install take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A single conference room is often a few days on site once the design and the equipment are set. Classrooms, auditoriums, and multi-site work follow the building's calendar. We do not promise a room is finished overnight."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you integrate our existing cameras and access control?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, when what you have is worth keeping. We look at the cameras, the access system, and the network, then connect them so the room is not a separate project from the rest of the building."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you serve both Kansas and Missouri?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. One Day Systems serves the Kansas City metro on both sides of the state line."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are you a managed IT provider or project-based?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Project-based: evaluate, design, integrate, deploy. We are not a ticket-queue MSP."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How fast can you start?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Often within days of scope agreement. Multi-site school work follows your calendar, including summers and breaks when that is what the buildings need."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens after deployment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Documentation, credentials in your name, training for the people who use it, and a clear handoff."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -47,8 +215,9 @@
     <div class="wrap-s">
       <p class="crumb"><a href="/services/">Services</a> · 03</p>
       <p class="kicker">AV</p>
-      <h1>Rooms and events that just work</h1>
-      <p class="lede" style="color:var(--muted)">Rooms, events, and systems that just work.</p>
+      <h1>Conference room and AV integration in Kansas City</h1>
+      <p class="lede" style="color:var(--muted)">Rooms and events that just work</p>
+      <p class="answer">One Day Systems is a technology consulting firm serving the Kansas City metro that evaluates, designs, integrates and deploys conference room and event AV for schools, businesses, government and industrial sites.</p>
     </div>
   </section>
   <section class="section" style="padding-top:8px">
@@ -82,6 +251,35 @@
       </div>
     </div>
   </section>
+<section class="section" style="padding-top:8px">
+  <div class="wrap-s faq">
+    <h2>Questions</h2>
+    <article>
+      <h3>How long does a conference room AV install take?</h3>
+      <p>A single conference room is often a few days on site once the design and the equipment are set. Classrooms, auditoriums, and multi-site work follow the building's calendar. We do not promise a room is finished overnight.</p>
+    </article>
+    <article>
+      <h3>Can you integrate our existing cameras and access control?</h3>
+      <p>Yes, when what you have is worth keeping. We look at the cameras, the access system, and the network, then connect them so the room is not a separate project from the rest of the building.</p>
+    </article>
+    <article>
+      <h3>Do you serve both Kansas and Missouri?</h3>
+      <p>Yes. One Day Systems serves the Kansas City metro on both sides of the state line.</p>
+    </article>
+    <article>
+      <h3>Are you a managed IT provider or project-based?</h3>
+      <p>Project-based: evaluate, design, integrate, deploy. We are not a ticket-queue MSP.</p>
+    </article>
+    <article>
+      <h3>How fast can you start?</h3>
+      <p>Often within days of scope agreement. Multi-site school work follows your calendar, including summers and breaks when that is what the buildings need.</p>
+    </article>
+    <article>
+      <h3>What happens after deployment?</h3>
+      <p>Documentation, credentials in your name, training for the people who use it, and a clear handoff.</p>
+    </article>
+  </div>
+</section>
 </main>
 <footer class="site-footer">
   <div class="wrap foot">

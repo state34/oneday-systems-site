@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact — One Day Systems</title>
-  <meta name="description" content="Tell One Day Systems what you have been putting off. Email stan@onedaysystems.com or expert@onedaysystems.com. De Soto, Kansas." />
+  <title>Contact One Day Systems | De Soto, Kansas / Kansas City metro</title>
+  <meta name="description" content="Email and phone for One Day Systems. Serving the Kansas City metro on both sides of the state line." />
   <link rel="canonical" href="https://onedaysystems.com/contact/" />
-  <meta property="og:title" content="Contact — One Day Systems" />
-  <meta property="og:description" content="Tell One Day Systems what you have been putting off. Email stan@onedaysystems.com or expert@onedaysystems.com. De Soto, Kansas." />
+  <meta property="og:title" content="Contact One Day Systems | De Soto, Kansas / Kansas City metro" />
+  <meta property="og:description" content="Email and phone for One Day Systems. Serving the Kansas City metro on both sides of the state line." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://onedaysystems.com/contact/" />
   <meta name="theme-color" content="#071e30" />
@@ -22,6 +22,98 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
+<!-- TODO: telephone — no public phone number is in the repo. Do not invent one. Add a telephone property on the ProfessionalService node (https://onedaysystems.com/#business) when Stan supplies it. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://onedaysystems.com/#business",
+      "name": "One Day Systems",
+      "legalName": "One Day Systems LLC",
+      "url": "https://onedaysystems.com",
+      "email": "stan@onedaysystems.com",
+      "logo": "https://onedaysystems.com/assets/brand/OneDaySystemsColor-on-white.png",
+      "image": "https://onedaysystems.com/assets/brand/OneDaySystemsColor-on-white.png",
+      "founder": {
+        "@id": "https://onedaysystems.com/about/#stan-nice"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "De Soto",
+        "addressRegion": "KS",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Kansas City"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Kansas City metro"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Johnson County"
+        },
+        {
+          "@type": "City",
+          "name": "Overland Park"
+        },
+        {
+          "@type": "City",
+          "name": "Olathe"
+        },
+        {
+          "@type": "City",
+          "name": "Lenexa"
+        },
+        {
+          "@type": "City",
+          "name": "Lawrence"
+        },
+        {
+          "@type": "State",
+          "name": "Kansas"
+        },
+        {
+          "@type": "State",
+          "name": "Missouri"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://onedaysystems.com/about/#stan-nice",
+      "name": "Stan Nice",
+      "jobTitle": "Founder",
+      "url": "https://onedaysystems.com/about/",
+      "worksFor": {
+        "@id": "https://onedaysystems.com/#business"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://onedaysystems.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contact",
+          "item": "https://onedaysystems.com/contact/"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -46,8 +138,9 @@
   <section class="page-hero">
     <div class="wrap">
       <p class="kicker">Contact</p>
-      <h1>Tell us what you’ve been putting off.</h1>
-      <p class="lede" style="color:var(--muted)">One Day Systems takes on the tech you keep putting off until “one day.” Start with the piece that has been waiting.</p>
+      <h1>Contact One Day Systems</h1>
+      <p class="lede" style="color:var(--muted)">Tell us what you’ve been putting off.</p>
+      <p class="answer">Contact One Day Systems, a technology consulting firm serving the Kansas City metro on both sides of the state line. Email stan@onedaysystems.com or expert@onedaysystems.com. Office and remit: De Soto, Kansas.</p>
     </div>
   </section>
   <section class="section" style="padding-top:12px">

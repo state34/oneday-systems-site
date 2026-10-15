@@ -236,6 +236,64 @@ p { text-wrap: pretty; }
 }
 .cover a:hover strong { color: #9dcea9; }
 
+.love-group { margin-top: 36px; }
+.love-group h3 {
+  margin: 0;
+  color: var(--deep);
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+.cards.three { grid-template-columns: repeat(3, 1fr); }
+.cards article {
+  background: var(--paper);
+  border-top: 3px solid var(--green);
+  padding: 18px 16px 20px;
+  box-shadow: var(--shadow);
+}
+.cards h4 {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font-size: 1.02rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.cards p { margin: 0; color: var(--ink); font-size: 0.95rem; }
+.ask { margin: 28px 0 0; max-width: 54ch; }
+.ask a, .wrap-s a { color: var(--navy); font-weight: 700; }
+
+.callout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 28px;
+}
+.callout article {
+  border-top: 3px solid var(--navy);
+  padding-top: 14px;
+}
+.callout h3 { margin: 0 0 8px; color: var(--navy); font-size: 1.05rem; }
+.callout p { margin: 0; color: var(--ink); font-size: 0.95rem; }
+.callout a { color: var(--navy); font-weight: 700; }
+
+.principles { margin-top: 48px; }
+.principles h2 { margin-bottom: 8px; }
+.principle {
+  display: grid;
+  grid-template-columns: minmax(12rem, 18rem) 1fr;
+  gap: 18px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+.principle:last-child { border-bottom: 1px solid var(--line); }
+.principle h3 { margin: 0; color: var(--navy); font-size: 1.05rem; }
+.principle p { margin: 0; }
+
 .section { padding: 76px 0; }
 .mist { background: var(--mist); }
 .kicker {
@@ -443,7 +501,8 @@ textarea { min-height: 140px; resize: vertical; }
   .cover em { display: none; }
   .cover a { padding: 6px 0; align-items: center; }
   .hero-grid, .belief, .split, .foot { grid-template-columns: 1fr; }
-  .process { grid-template-columns: 1fr 1fr; }
+  .process, .cards, .cards.three, .callout { grid-template-columns: 1fr 1fr; }
+  .principle { grid-template-columns: 1fr; gap: 6px; }
   .section { padding: 56px 0; }
   .nav-toggle { display: inline-flex; }
   .logo { height: 72px; }
@@ -475,7 +534,7 @@ textarea { min-height: 140px; resize: vertical; }
 @media (max-width: 640px) {
   :root { --header: 76px; }
   .wrap, .wrap-s, .header-inner { width: min(var(--max), calc(100% - 32px)); }
-  .process { grid-template-columns: 1fr; }
+  .process, .cards, .cards.three, .callout { grid-template-columns: 1fr; }
   .logo { height: 64px; }
   .hero h1 { max-width: none; }
 }

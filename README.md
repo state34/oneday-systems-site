@@ -8,6 +8,8 @@ https://calendar.app.google/HEjFgm7BNRwYn7HL8
 
 **Tagline:** One Day Systems takes on the tech you keep putting off until “one day.”
 
+Official marks (Leanna Uniak) live in `assets/brand/`: color on light backgrounds, white on dark, black for monochrome. Do not redraw the logo.
+
 ## Preview locally
 
 From the repo root:

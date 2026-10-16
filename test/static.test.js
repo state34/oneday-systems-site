@@ -104,7 +104,7 @@ describe("static contact rules", () => {
     expect(contact).toContain('href="https://calendly.com/stan-state34/30min"');
     expect(contact).toContain("Open the scheduler at calendly.com");
     expect(contact).toContain('target="_blank"');
-    expect(contact).toContain('rel="noopener"');
+    expect(contact).toContain('rel="noopener noreferrer"');
     for (const file of htmlFiles()) {
       if (file.endsWith("contact/index.html")) continue;
       const html = readFileSync(file, "utf8");

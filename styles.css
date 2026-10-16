@@ -541,8 +541,10 @@ textarea { min-height: 140px; resize: vertical; }
 .brand-cell.is-open { z-index: 4; }
 .brand-tile {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   width: 100%;
   min-height: 76px;
   padding: 12px 10px;
@@ -560,6 +562,21 @@ textarea { min-height: 140px; resize: vertical; }
   width: auto;
   max-width: 100%;
   object-fit: contain;
+}
+.brand-caption {
+  display: block;
+  max-width: 100%;
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  text-align: center;
+  color: var(--navy);
+}
+.brand-tile.has-logo .brand-caption {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0;
 }
 .wordmark {
   font-size: 0.92rem;

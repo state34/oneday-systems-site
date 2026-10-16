@@ -1,0 +1,32 @@
+# One Day Systems
+
+> One Day Systems is a technology consulting firm serving the Kansas City metro that evaluates, designs, integrates and deploys IT, AV, communications, security, hardware and software for schools, businesses, government and industrial sites. Led by Stan Nice. The work is project-based: evaluate, design, integrate, deploy. One Day Systems is not a ticket-queue MSP.
+
+## Services
+
+- [IT consulting and network projects](https://onedaysystems.com/services/it/): Network design, Wi-Fi, endpoints, cloud, and IT projects.
+- [Business communications and VoIP](https://onedaysystems.com/services/communications/): Phone, paging, collaboration, and connectivity.
+- [Conference room and AV integration](https://onedaysystems.com/services/av/): Conference rooms, classrooms, and event AV.
+- [Security cameras and access control](https://onedaysystems.com/services/security/): Cameras, access control, and practical hardening.
+- [Hardware sourcing and installation](https://onedaysystems.com/services/hardware/): Hardware selected, sourced, installed, and supported against a design.
+- [Custom software and system integrations](https://onedaysystems.com/services/software/): Custom tools, integrations, and automation.
+
+## Area served
+
+Kansas City metro, on both sides of the state line (Kansas and Missouri), including Johnson County, Overland Park, Olathe, Lenexa, and Lawrence. Office and remit: De Soto, Kansas.
+
+## Contact
+
+- https://onedaysystems.com/contact/
+- Schedule: https://onedaysystems.com/contact/#schedule
+- Office and remit: De Soto, Kansas
+- No public phone number is published.
+
+## Key pages
+
+- [Home](https://onedaysystems.com/)
+- [Services](https://onedaysystems.com/services/)
+- [How we work](https://onedaysystems.com/how-we-work/)
+- [About Stan Nice](https://onedaysystems.com/about/)
+- [Contact](https://onedaysystems.com/contact/)
+- [Brands we love](https://onedaysystems.com/brands/)

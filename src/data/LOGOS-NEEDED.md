@@ -1,0 +1,84 @@
+# Logos needed
+
+Every brand below is `logoStatus: needs-asset`. Show a text wordmark until a licensed logo is added under `public/brands/` (or `assets/brands/`). Then set `logo` to that path and `logoStatus` to `ok`.
+
+Do not scrape logos from vendor sites. Use a mark only when the brand guidelines allow it on a customer or integrator site for identification, not endorsement.
+
+76 brands:
+
+- QSC Audio
+- Electro-Voice
+- Community (loudspeakers)
+- SoundTube
+- Meyer Sound
+- Allen & Heath
+- Yamaha
+- Midas
+- Audix
+- Shure
+- Earthworks Audio
+- Visionary Solutions
+- Covid, Inc. (AV)
+- Comprehensive Cable
+- AVPro Edge
+- Samsung Direct View LED
+- Absen
+- Q-SYS (QSC)
+- Biamp
+- Epson
+- Samsung
+- Sony
+- Logitech
+- Poly (HP)
+- Neat
+- Legrand AV (Chief, Vaddio, Middle Atlantic)
+- VOD Visual North America
+- NETGEAR AV
+- Cisco
+- Cisco Meraki
+- HPE Aruba Networking
+- Extreme Networks
+- Ubiquiti (UniFi)
+- Cambium Networks
+- Sophos
+- Palo Alto Networks
+- Axis Communications
+- Avigilon (Motorola Solutions)
+- Bosch Security
+- Eagle Eye Networks
+- HALO Smart Sensor
+- Brivo
+- Avigilon Alta (formerly Openpath)
+- LenelS2
+- Genetec Synergis
+- HID Global
+- Allegion (Schlage)
+- ASSA ABLOY
+- Microsoft Teams Phone
+- Zoom Phone
+- Webex Calling (Cisco)
+- Mitel
+- AtlasIED
+- Valcom
+- Algo Communication Products
+- Singlewire InformaCast
+- Dell Technologies
+- HP
+- Lenovo
+- Apple
+- Google Chromebooks (ChromeOS)
+- Microsoft 365 / Teams / Teams Rooms
+- Google Workspace (for Education)
+- Zoom (Workplace / Rooms)
+- Cisco Webex
+- Jamf
+- Microsoft Intune
+- Switchcraft
+- Neutrik
+- Radio Design Labs (RDL)
+- Lowell Manufacturing
+- Panduit
+- CommScope (SYSTIMAX)
+- Leviton
+- Chatsworth Products
+- APC by Schneider Electric

@@ -1,0 +1,692 @@
+{
+  "version": 1,
+  "updated": "2026-10-15",
+  "title": "Brands We Love",
+  "intro": "We do not sell every brand on this page, and we are not locked to any of them. These are products and platforms we like working with, and we think they are worth considering for your project. Hover or tap a logo to see why.",
+  "footerNote": "Brand names and logos are trademarks of their respective owners. We show them because we like working with these products. One Day Systems is not a partner, reseller or certified representative for any brand listed here.",
+  "sections": [
+    {
+      "segment": "Speakers",
+      "brands": [
+        {
+          "id": "qsc-audio",
+          "name": "QSC Audio",
+          "url": "https://www.qsc.com",
+          "blurb": "For gyms, chapels and multipurpose rooms, QSC speakers are a workhorse we trust to sound clear without baby-sitting them.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "electro-voice",
+          "name": "Electro-Voice",
+          "url": "https://www.electrovoice.com",
+          "blurb": "We like how Electro-Voice holds up in loud spaces. Gyms, stages and outdoor events are where this brand earns its keep.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "community-loudspeakers",
+          "name": "Community (loudspeakers)",
+          "url": "https://www.communitypro.com",
+          "blurb": "Community speakers are built for big rooms and rough weather. Stadiums, parks and school fields are their sweet spot.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "soundtube",
+          "name": "SoundTube",
+          "url": "https://www.soundtube.com",
+          "blurb": "A Kansas City-area neighbor. SoundTube ceiling and landscape speakers disappear into the room and still sound great.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "meyer-sound",
+          "name": "Meyer Sound",
+          "url": "https://www.meyersound.com",
+          "blurb": "When the room has to sound right the first time, Meyer Sound is the premium pick. Support and consistency are a big part of why we like them.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        }
+      ]
+    },
+    {
+      "segment": "Mixers",
+      "brands": [
+        {
+          "id": "allen-heath",
+          "name": "Allen & Heath",
+          "url": "https://www.allen-heath.com",
+          "blurb": "We like how Allen & Heath mixers stay friendly under pressure. Live events and worship spaces get a desk that operators actually enjoy.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "yamaha",
+          "name": "Yamaha",
+          "url": "https://usa.yamaha.com/products/proaudio/index.html",
+          "blurb": "Yamaha desks and install mixers are familiar to almost every tech. Reliable, widely supported, and easy to hand off.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "midas",
+          "name": "Midas",
+          "url": "https://www.midasconsoles.com",
+          "blurb": "For stages that want that classic console feel, Midas still delivers. Warm, solid and built for live sound.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        }
+      ]
+    },
+    {
+      "segment": "Microphones",
+      "brands": [
+        {
+          "id": "audix",
+          "name": "Audix",
+          "url": "https://audixusa.com",
+          "blurb": "We like Audix for stages and pulpits. Tough mics that sound honest and do not need constant fussing.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "shure",
+          "name": "Shure",
+          "url": "https://www.shure.com",
+          "blurb": "A safe choice for boardrooms, gyms and event stages alike. Shure just works, and support is easy to find.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "earthworks-audio",
+          "name": "Earthworks Audio",
+          "url": "https://earthworksaudio.com",
+          "blurb": "When the table needs to disappear and voices still cut through, Earthworks ceiling and boundary mics shine.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        }
+      ]
+    },
+    {
+      "segment": "Video / Connectivity",
+      "brands": [
+        {
+          "id": "visionary-solutions",
+          "name": "Visionary Solutions",
+          "url": "https://visionary-av.com",
+          "blurb": "We like how Visionary keeps video on the network simple. Clean AV-over-IP that fits modern classrooms and conference rooms.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "covid-inc-av",
+          "name": "Covid, Inc. (AV)",
+          "url": "https://covid.com",
+          "blurb": "The quiet heroes in the rack. Covid wall plates, cables and extenders keep rooms tidy and signal paths boring in the best way.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "comprehensive-cable",
+          "name": "Comprehensive Cable",
+          "url": "https://www.comprehensivecable.com",
+          "blurb": "Good cable is invisible until it fails. Comprehensive is a practical, widely stocked choice we reach for on everyday installs.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "avpro-edge",
+          "name": "AVPro Edge",
+          "url": "https://www.avproedge.com",
+          "blurb": "Midwest-made switching and distribution. AVPro Edge fits when you want solid HDMI and HDBaseT gear without drama.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        }
+      ]
+    },
+    {
+      "segment": "Displays / LED",
+      "brands": [
+        {
+          "id": "samsung-direct-view-led",
+          "name": "Samsung Direct View LED",
+          "url": "https://www.samsung.com/us/business/display-solutions/",
+          "blurb": "When a lobby or chapel needs a true LED canvas, Samsung direct-view walls look sharp and stay serviceable.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "absen",
+          "name": "Absen",
+          "url": "https://www.usabsen.com",
+          "blurb": "Absen LED walls show up in houses of worship and venues that want bright, scalable displays at a fair price.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        }
+      ]
+    },
+    {
+      "segment": "AV / Conference Rooms",
+      "brands": [
+        {
+          "id": "q-sys-qsc",
+          "name": "Q-SYS (QSC)",
+          "url": "https://www.qsys.com",
+          "blurb": "Audio, video and control on one platform. Q-SYS keeps bigger rooms simpler to run day to day.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "biamp",
+          "name": "Biamp",
+          "url": "https://www.biamp.com",
+          "blurb": "We like Biamp when people need to be heard clearly. Dependable conferencing audio for rooms that matter.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "epson",
+          "name": "Epson",
+          "url": "https://www.epson.com",
+          "blurb": "Classroom projectors that hold up well for the price. Epson is a familiar, easy-to-support choice.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "samsung",
+          "name": "Samsung",
+          "url": "https://www.samsung.com/us/business/",
+          "blurb": "Commercial displays for lobbies, signage and conference rooms. Steady picture and parts you can actually get.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "sony",
+          "name": "Sony",
+          "url": "https://pro.sony",
+          "blurb": "When a room needs a step up in picture or a solid PTZ camera, Sony pro gear is a safe bet.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "logitech",
+          "name": "Logitech",
+          "url": "https://www.logitech.com/business",
+          "blurb": "Simple room kits that are easy on the budget. Great for small huddle rooms where anyone can walk up and join.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "poly-hp",
+          "name": "Poly (HP)",
+          "url": "https://www.poly.com",
+          "blurb": "Familiar video bars and conference phones that play nicely with Teams and Zoom. Office-ready and widely supported.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "neat",
+          "name": "Neat",
+          "url": "https://neat.no",
+          "blurb": "All-in-one room devices that feel friendly. Walk up, tap, and you are in the meeting.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "legrand-av-chief-vaddio-middle-atlantic",
+          "name": "Legrand AV (Chief, Vaddio, Middle Atlantic)",
+          "url": "https://www.legrandav.com",
+          "blurb": "Mounts, PTZ cameras and racks that hold a good room together. The unglamorous gear that makes everything else behave.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "vod-visual-north-america",
+          "name": "VOD Visual North America",
+          "url": "https://vodvisualna.com",
+          "blurb": "LED walls with local North American support. A practical path when a space needs a big, bright canvas.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        }
+      ]
+    },
+    {
+      "segment": "Networking / Wi-Fi / Switching",
+      "brands": [
+        {
+          "id": "netgear-av",
+          "name": "NETGEAR AV",
+          "url": "https://www.netgear.com/business/wired/switches/av-line/",
+          "blurb": "For AV-over-IP networks, NETGEAR's AV switches are pre-tuned for media. Less fiddling, more content on the wall.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "cisco",
+          "name": "Cisco",
+          "url": "https://www.cisco.com",
+          "blurb": "The standard in a lot of districts and larger offices. Knowing Cisco well helps us support what you already have.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "cisco-meraki",
+          "name": "Cisco Meraki",
+          "url": "https://meraki.cisco.com",
+          "blurb": "Cloud-managed Wi-Fi and switching a small IT team can run from one dashboard after we hand it off.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "hpe-aruba-networking",
+          "name": "HPE Aruba Networking",
+          "url": "https://www.arubanetworks.com",
+          "blurb": "Strong campus Wi-Fi for schools and offices with a lot of devices. Built for dense, busy networks.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "extreme-networks",
+          "name": "Extreme Networks",
+          "url": "https://www.extremenetworks.com",
+          "blurb": "Common in K-12 and a solid choice at a fair price. Extreme gives districts another path that still feels enterprise.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "ubiquiti-unifi",
+          "name": "Ubiquiti (UniFi)",
+          "url": "https://www.ui.com",
+          "blurb": "Good value Wi-Fi and switching when the budget is tight. UniFi can cover a small business or building without breaking the bank.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "cambium-networks",
+          "name": "Cambium Networks",
+          "url": "https://www.cambiumnetworks.com",
+          "blurb": "Useful for linking buildings and reaching rural sites where fiber is hard to get. Outdoor wireless done thoughtfully.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        }
+      ]
+    },
+    {
+      "segment": "Cybersecurity / Firewalls",
+      "brands": [
+        {
+          "id": "sophos",
+          "name": "Sophos",
+          "url": "https://www.sophos.com",
+          "blurb": "Firewall and endpoint protection that is easier to keep up with. A practical stack for schools and mid-size offices.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "palo-alto-networks",
+          "name": "Palo Alto Networks",
+          "url": "https://www.paloaltonetworks.com",
+          "blurb": "Top-shelf next-gen firewalls. May be more than most clients need, but when the bar is high, this is the name.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        }
+      ]
+    },
+    {
+      "segment": "Security Cameras / VMS",
+      "brands": [
+        {
+          "id": "axis-communications",
+          "name": "Axis Communications",
+          "url": "https://www.axis.com",
+          "blurb": "Well-built cameras that work with almost any video system. Open, reliable and a favorite for long-lived installs.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "avigilon-motorola-solutions",
+          "name": "Avigilon (Motorola Solutions)",
+          "url": "https://www.avigilon.com",
+          "blurb": "Smarter search and alerts on video. Strong when a site wants cameras that help staff find what matters faster.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "bosch-security",
+          "name": "Bosch Security",
+          "url": "https://www.boschsecurity.com",
+          "blurb": "A long-trusted name in building security. Many facilities already know Bosch, which makes upgrades smoother.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "eagle-eye-networks",
+          "name": "Eagle Eye Networks",
+          "url": "https://www.een.com",
+          "blurb": "Cloud VMS that can move existing cameras online without replacing everything. Practical path to modern video.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "halo-smart-sensor",
+          "name": "HALO Smart Sensor",
+          "url": "https://www.halodetect.com",
+          "blurb": "Schools ask about vape and air-quality detection a lot. HALO is a common, clear answer we are glad to support.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        }
+      ]
+    },
+    {
+      "segment": "Access Control",
+      "brands": [
+        {
+          "id": "brivo",
+          "name": "Brivo",
+          "url": "https://www.brivo.com",
+          "blurb": "Cloud access that works for one door or many sites. Established, steady and easy for staff to live with.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "avigilon-alta-formerly-openpath",
+          "name": "Avigilon Alta (formerly Openpath)",
+          "url": "https://www.avigilon.com/alta",
+          "blurb": "Phone-based entry that feels modern. Alta makes coming and going simple for staff without a pile of plastic cards.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "lenels2",
+          "name": "LenelS2",
+          "url": "https://www.lenels2.com",
+          "blurb": "Fits larger campuses and government buildings with many doors. Enterprise access when the site is complex.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "genetec-synergis",
+          "name": "Genetec Synergis",
+          "url": "https://www.genetec.com",
+          "blurb": "Access control that lives inside Genetec. Makes sense when cameras and doors should share one system.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "hid-global",
+          "name": "HID Global",
+          "url": "https://www.hidglobal.com",
+          "blurb": "Readers and cards found in a lot of buildings. We work with HID often because so many doors already speak it.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "allegion-schlage",
+          "name": "Allegion (Schlage)",
+          "url": "https://www.allegion.com",
+          "blurb": "Schlage hardware is a common, dependable choice for doors in schools and offices. Locks people already trust.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "assa-abloy",
+          "name": "ASSA ABLOY",
+          "url": "https://www.assaabloy.com",
+          "blurb": "Much of the door hardware access control depends on. Exit devices and strikes that keep openings code-right.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        }
+      ]
+    },
+    {
+      "segment": "Business Phones / VoIP / Paging",
+      "brands": [
+        {
+          "id": "microsoft-teams-phone",
+          "name": "Microsoft Teams Phone",
+          "url": "https://www.microsoft.com/microsoft-teams/calling-in-teams",
+          "blurb": "Calling inside the Microsoft world you already use. Natural fit for places that live in Microsoft 365.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "zoom-phone",
+          "name": "Zoom Phone",
+          "url": "https://www.zoom.com/phone",
+          "blurb": "Cloud calling for organizations that already meet on Zoom. One familiar app for meetings and desk calls.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "webex-calling-cisco",
+          "name": "Webex Calling (Cisco)",
+          "url": "https://www.webex.com/products/calling.html",
+          "blurb": "Cloud calling that fits sites already on Cisco gear. Familiar, enterprise-ready and well supported.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "mitel",
+          "name": "Mitel",
+          "url": "https://www.mitel.com",
+          "blurb": "Many schools and offices still run Mitel. Helping with upgrades from it is part of how we keep phone systems calm.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "atlasied",
+          "name": "AtlasIED",
+          "url": "https://www.atlasied.com",
+          "blurb": "School paging, bells and speakers. AtlasIED is a common, trusted choice in education buildings.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "valcom",
+          "name": "Valcom",
+          "url": "https://www.valcom.com",
+          "blurb": "Simple paging that has lived in schools and warehouses for years. Straightforward and serviceable.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "algo-communication-products",
+          "name": "Algo Communication Products",
+          "url": "https://www.algosolutions.com",
+          "blurb": "SIP paging speakers and strobes that drop cleanly onto a VoIP phone system. Easy alerts without a separate island.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "singlewire-informacast",
+          "name": "Singlewire InformaCast",
+          "url": "https://www.singlewire.com",
+          "blurb": "Ties phones, speakers and screens together for lockdowns and alerts. Midwest-made mass notification done right.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        }
+      ]
+    },
+    {
+      "segment": "Endpoints / Workstations",
+      "brands": [
+        {
+          "id": "dell-technologies",
+          "name": "Dell Technologies",
+          "url": "https://www.dell.com",
+          "blurb": "Common, dependable staff computers and small servers. Easy to buy, easy to support, easy to replace parts for.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "hp",
+          "name": "HP",
+          "url": "https://www.hp.com",
+          "blurb": "Familiar to most offices and schools. Laptops, desktops and printers with support you can actually reach.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "lenovo",
+          "name": "Lenovo",
+          "url": "https://www.lenovo.com",
+          "blurb": "ThinkPads and Chromebooks that hold up well for staff and students. A volume choice in a lot of classrooms.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "apple",
+          "name": "Apple",
+          "url": "https://www.apple.com",
+          "blurb": "Macs and iPads show up in plenty of schools. We plan networks and rooms so they feel at home.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "google-chromebooks-chromeos",
+          "name": "Google Chromebooks (ChromeOS)",
+          "url": "https://www.google.com/chromebook",
+          "blurb": "Chromebooks are everywhere in K-12. They need good Wi-Fi, and we build for that.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        }
+      ]
+    },
+    {
+      "segment": "Software / Cloud / Collaboration",
+      "brands": [
+        {
+          "id": "microsoft-365-teams-teams-rooms",
+          "name": "Microsoft 365 / Teams / Teams Rooms",
+          "url": "https://www.microsoft.com/microsoft-365",
+          "blurb": "The backbone for many of our clients. Rooms and networks get built around the Microsoft world people already live in.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "google-workspace-for-education",
+          "name": "Google Workspace (for Education)",
+          "url": "https://workspace.google.com",
+          "blurb": "Many schools run on Google. We make sure rooms and devices fit Classroom, Meet and the rest without friction.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "zoom-workplace-rooms",
+          "name": "Zoom (Workplace / Rooms)",
+          "url": "https://www.zoom.com",
+          "blurb": "Zoom Rooms are a common conference-room choice, and lots of gear supports them cleanly.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "cisco-webex",
+          "name": "Cisco Webex",
+          "url": "https://www.webex.com",
+          "blurb": "Meetings and room devices for organizations already on Cisco. Familiar stack, familiar support path.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "jamf",
+          "name": "Jamf",
+          "url": "https://www.jamf.com",
+          "blurb": "Keeps iPads and Macs managed. Matters a lot in schools with carts full of Apple devices.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "microsoft-intune",
+          "name": "Microsoft Intune",
+          "url": "https://www.microsoft.com/security/business/microsoft-intune",
+          "blurb": "Helps keep staff computers updated and secure without a lot of hands-on work. Quiet, useful device management.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        }
+      ]
+    },
+    {
+      "segment": "Connectivity / Racks",
+      "brands": [
+        {
+          "id": "switchcraft",
+          "name": "Switchcraft",
+          "url": "https://www.switchcraft.com",
+          "blurb": "Chicago-made connectors and panels. The little parts that keep a rack honest for years.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "neutrik",
+          "name": "Neutrik",
+          "url": "https://www.neutrik.com",
+          "blurb": "SpeakON, XLR and etherCON done right. Neutrik connectors are what we reach for when a cable has to survive the road.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "radio-design-labs-rdl",
+          "name": "Radio Design Labs (RDL)",
+          "url": "https://www.rdlnet.com",
+          "blurb": "RDL sticks and modules solve the odd little audio problems. Compact, dependable and made for integrators.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "lowell-manufacturing",
+          "name": "Lowell Manufacturing",
+          "url": "https://www.lowellmfg.com",
+          "blurb": "Racks, panels and power the quiet Midwestern way. Lowell keeps closets neat so the next tech has an easier day.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        }
+      ]
+    },
+    {
+      "segment": "Cabling / Racks / Infrastructure",
+      "brands": [
+        {
+          "id": "panduit",
+          "name": "Panduit",
+          "url": "https://www.panduit.com",
+          "blurb": "Cabling pieces that keep a closet neat and easy to work in. Small details that save hours later.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "commscope-systimax",
+          "name": "CommScope (SYSTIMAX)",
+          "url": "https://www.commscope.com",
+          "blurb": "Copper and fiber systems common in larger buildings that want a long warranty on the wiring.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "leviton",
+          "name": "Leviton",
+          "url": "https://www.leviton.com",
+          "blurb": "Practical, widely available network jacks and panels. Everyday wiring done without drama.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "chatsworth-products",
+          "name": "Chatsworth Products",
+          "url": "https://www.chatsworth.com",
+          "blurb": "Racks and cabinets that keep network closets organized and safe. The frame everything else hangs on.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        },
+        {
+          "id": "apc-by-schneider-electric",
+          "name": "APC by Schneider Electric",
+          "url": "https://www.apc.com",
+          "blurb": "Battery backups that keep networks and phones running through short power blips. Peace of mind in a rack unit.",
+          "logo": null,
+          "logoStatus": "needs-asset"
+        }
+      ]
+    }
+  ]
+}

@@ -1,22 +1,57 @@
 # One Day Systems website
 
-Public site for [onedaysystems.com](https://onedaysystems.com).
+Public marketing site for One Day Systems LLC.
 
-Static HTML. Booking is Google Calendar Appointment Schedule + Meet:
+Static HTML and CSS at the repository root. No build step. The contact form is a Pages Function. Booking is the Calendly widget on `/contact/#schedule`.
 
-https://calendar.app.google/HEjFgm7BNRwYn7HL8
+**Tagline:** One Day Systems takes on the tech you keep putting off until “one day.”
 
-## Deploy: Cloudflare Pages
+Official marks (Leanna Uniak) live in `assets/brand/`: color on light backgrounds, white on dark, black for monochrome. Do not redraw the logo.
 
-1. Log in to Cloudflare Dashboard.
-2. Workers & Pages → Create → Pages → Connect to Git.
-3. Authorize GitHub and select `state34/oneday-systems-site`.
-4. Framework preset: None. Build command empty. Output directory `/`. Production branch `main`.
-5. Save and Deploy.
-6. Custom domains → `onedaysystems.com` and `www.onedaysystems.com`.
+## Preview locally
 
-Preview URL: `https://oneday-systems-site.pages.dev`
+From the repo root:
+
+```bash
+npx --yes serve . -p 8080
+```
+
+## Cloudflare Pages
+
+Suggested project name: `oneday-systems-site`
+
+Preview expectation: `https://oneday-systems-site.<account>.pages.dev` (or the project’s `*.pages.dev` URL after the first deploy). A branch preview for `slice/site-rebuild` will also appear in the Pages dashboard.
+
+Production branch later = `main`, after Stan signs off on the rebuild.
+
+No `wrangler.toml`. Connect the Git repo; do not add a build.
+
+1. Cloudflare Dashboard → Workers & Pages → Create → Pages → Connect to Git.
+2. Authorize GitHub and select `state34/oneday-systems-site`.
+3. Framework preset: **None**. Build command: empty. Output directory: `/` (repository root).
+4. For this review, deploy the branch `slice/site-rebuild`. Do not set the production branch to `main` yet.
+5. Do **not** attach `onedaysystems.com` or `www.onedaysystems.com` in this slice. Custom domain stays deferred until Stan signs off. DNS at the registrar is unchanged.
+
+### Why this branch has no `CNAME`
+
+`main` still contains a `CNAME` file for `onedaysystems.com`. Cloudflare Pages will attach that hostname if it deploys `main`. This branch deletes `CNAME` so a preview of `slice/site-rebuild` does not claim the domain. Leave the custom domain off, and do not promote `main`, until Stan signs off.
 
 ## Contact
 
-expert@onedaysystems.com
+The public site does not publish email addresses. Notes go through `/contact/`. The privacy page keeps both addresses as plain text, with no mailto link.
+
+Office and remit: De Soto, Kansas.
+
+Public phone: none on the site. Do not invent a number.
+
+### Env and bindings Eng sets in Pages (Preview and Production)
+
+Do not commit values.
+
+- `RESEND_API_KEY` (secret)
+- `CONTACT_TO`
+- `CONTACT_FROM` (example: `One Day Systems <noreply@onedaysystems.com>`)
+- `TURNSTILE_SITE_KEY` (public; the contact page reads it from `/api/form-config`)
+- `TURNSTILE_SECRET_KEY` (secret)
+- KV namespace binding `CONTACT_RL`
+- `sitemap.xml` and `llms.txt` are at the site root. `robots.txt` points at the sitemap and does not disallow GPTBot, PerplexityBot, Google-Extended, or OAI-SearchBot.

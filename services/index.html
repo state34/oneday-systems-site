@@ -15,9 +15,9 @@
   <meta property="og:image:width" content="1000" />
   <meta property="og:image:height" content="1000" />
   <meta name="twitter:card" content="summary" />
-  <link rel="icon" href="/assets/brand/OneDaySystemsColor.svg" type="image/svg+xml" />
-  <link rel="icon" href="/assets/brand/OneDaySystemsColor1000x1000.png" type="image/png" />
-  <link rel="apple-touch-icon" href="/assets/brand/OneDaySystemsColor1000x1000.png" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
@@ -97,6 +97,21 @@
       "worksFor": {
         "@id": "https://onedaysystems.com/#business"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://onedaysystems.com/services/#faq",
+      "url": "https://onedaysystems.com/services/",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do we have to replace everything?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Almost never. We document what you have, keep what still fits, and plan updates ahead of failure, so you only replace what you need, when you need it."
+          }
+        }
+      ]
     },
     {
       "@type": "BreadcrumbList",
@@ -186,6 +201,22 @@
         <a class="btn" href="/contact/#schedule">Schedule a time</a>
         <a class="btn btn-navy" href="/how-we-work/">How we work</a>
       </div>
+    </div>
+  </section>
+  <section class="section mist" id="lifecycle">
+    <div class="wrap">
+      <h2>Lifecycle Management</h2>
+      <p class="intro">Replace only what you need.</p>
+      <p>Most rooms and buildings don't need a clean slate. They need someone to take an honest look at what's already there. We start by walking your space and documenting everything that's installed, from AV and network gear to the sensors, controllers, cameras and other connected devices that tend to get forgotten.</p>
+      <p>Then we sit down together and look at how it all fits your plans today. Some of it has years of good life left. Some of it is getting close, maybe because it's past support or because it'll hold you back from where you're headed. You'll get a simple roadmap showing what can stay, what should be updated, and roughly when, so the decisions happen on your schedule and not in the middle of an outage.</p>
+      <p>Along the way, we keep an eye on firmware, security updates, warranties and end-of-support dates, and we check in before something becomes a problem. That way you're spending on the pieces that need it, not replacing a whole system because one part wore out.</p>
+    </div>
+    <div class="wrap-s faq" id="faq">
+      <h2>Questions</h2>
+      <article>
+        <h3>Do we have to replace everything?</h3>
+        <p>Almost never. We document what you have, keep what still fits, and plan updates ahead of failure, so you only replace what you need, when you need it.</p>
+      </article>
     </div>
   </section>
 </main>

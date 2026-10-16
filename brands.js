@@ -2,11 +2,6 @@
   var root = document.getElementById("brands-root");
   if (!root) return;
 
-  var pinned = null;
-  var hover = null;
-  var touchLock = 0;
-  var suppressFocus = false;
-
   fetch("/src/data/brands-we-love.json")
     .then(function (res) {
       if (!res.ok) throw new Error("load");
@@ -24,13 +19,13 @@
     if (note && data.footerNote) note.textContent = data.footerNote;
 
     var filters = document.getElementById("brand-filters");
-    filters.innerHTML = "";
+    clear(filters);
     filters.appendChild(chip("All", "", true));
     data.sections.forEach(function (section) {
       filters.appendChild(chip(section.segment, section.segment, false));
     });
 
-    root.innerHTML = "";
+    clear(root);
     data.sections.forEach(function (section) {
       var block = document.createElement("section");
       block.className = "brand-segment";
@@ -41,6 +36,10 @@
       var grid = document.createElement("div");
       grid.className = "brands-grid";
       section.brands.forEach(function (brand) {
+        if (!brand.url || brand.url.indexOf("https://") !== 0) {
+          console.warn("Skipped brand with a non-https URL", brand.id || brand.name);
+          return;
+        }
         grid.appendChild(cell(brand));
       });
       block.appendChild(grid);
@@ -58,8 +57,12 @@
         var show = !segment || block.getAttribute("data-segment") === segment;
         block.hidden = !show;
       });
-      closeAll();
+      closeInfo();
     });
+  }
+
+  function clear(node) {
+    while (node.firstChild) node.removeChild(node.firstChild);
   }
 
   function chip(label, segment, pressed) {
@@ -76,187 +79,101 @@
     var wrap = document.createElement("div");
     wrap.className = "brand-cell";
     var popId = "blurb-" + brand.id;
-    var button = document.createElement("button");
-    button.type = "button";
-    button.className = "brand-tile";
-    button.setAttribute("data-id", brand.id);
-    button.setAttribute("aria-expanded", "false");
-    button.setAttribute("aria-controls", popId);
-    button.setAttribute("aria-describedby", popId);
+
+    var link = document.createElement("a");
+    link.className = "brand-tile";
+    link.href = brand.url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.setAttribute("data-id", brand.id);
+    if (brand.dark) link.classList.add("is-dark");
 
     if (brand.logo && brand.logoStatus === "ok") {
       var img = document.createElement("img");
       img.src = brand.logo;
-      img.alt = "";
+      img.alt = brand.name;
       img.loading = "lazy";
       img.decoding = "async";
-      button.classList.add("has-logo");
-      button.appendChild(img);
+      if (brand.logoWidth) img.width = brand.logoWidth;
+      if (brand.logoHeight) img.height = brand.logoHeight;
+      link.appendChild(img);
     }
 
     var caption = document.createElement("span");
     caption.className = "brand-caption";
     caption.textContent = brand.name;
-    button.appendChild(caption);
+    link.appendChild(caption);
+
+    var hint = document.createElement("span");
+    hint.className = "sr-only";
+    hint.textContent = " (opens in new tab)";
+    link.appendChild(hint);
+
+    var info = document.createElement("button");
+    info.type = "button";
+    info.className = "brand-info";
+    info.setAttribute("aria-expanded", "false");
+    info.setAttribute("aria-controls", popId);
+    var mark = document.createElement("span");
+    mark.setAttribute("aria-hidden", "true");
+    mark.textContent = "i";
+    var infoLabel = document.createElement("span");
+    infoLabel.className = "sr-only";
+    infoLabel.textContent = "About " + brand.name;
+    info.appendChild(mark);
+    info.appendChild(infoLabel);
+    info.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      var open = wrap.classList.contains("is-open");
+      closeInfo();
+      if (!open) {
+        wrap.classList.add("is-open");
+        info.setAttribute("aria-expanded", "true");
+        place(link, pop);
+      }
+    });
 
     var pop = document.createElement("div");
     pop.className = "brand-pop";
     pop.id = popId;
-    pop.hidden = true;
     pop.setAttribute("role", "region");
     pop.setAttribute("aria-label", brand.name);
     var copy = document.createElement("p");
     copy.textContent = brand.blurb;
-    var actions = document.createElement("div");
-    actions.className = "brand-pop-actions";
-    var visit = document.createElement("a");
-    visit.href = brand.url;
-    visit.target = "_blank";
-    visit.rel = "noopener noreferrer";
-    visit.textContent = "Visit site";
-    var visitHint = document.createElement("span");
-    visitHint.className = "sr-only";
-    visitHint.textContent = " (opens in new tab)";
-    visit.appendChild(visitHint);
-    var close = document.createElement("button");
-    close.type = "button";
-    close.className = "brand-close";
-    close.textContent = "Close";
-    close.addEventListener("click", function () {
-      setOpen(button, false);
-      button.focus();
-    });
-    actions.appendChild(visit);
-    actions.appendChild(close);
     pop.appendChild(copy);
-    pop.appendChild(actions);
 
-    button.addEventListener("pointerenter", function (event) {
-      if (event.pointerType !== "mouse" || Date.now() < touchLock) return;
-      hover = brand.id;
-      setOpen(button, true);
-    });
-    button.addEventListener("pointerleave", function (event) {
-      if (event.pointerType !== "mouse") return;
-      if (hover === brand.id) hover = null;
-      if (pinned === brand.id || document.activeElement === button) return;
-      setOpen(button, false);
-    });
-    button.addEventListener("pointerdown", function (event) {
-      if (event.pointerType !== "mouse") touchLock = Date.now() + 800;
-    });
-    button.addEventListener("focus", function () {
-      if (suppressFocus) return;
-      setOpen(button, true);
-    });
-    button.addEventListener("blur", function () {
-      window.setTimeout(function () {
-        if (pinned === brand.id || hover === brand.id) return;
-        var live = document.getElementById(button.getAttribute("aria-controls"));
-        if (live && live.contains(document.activeElement)) return;
-        setOpen(button, false);
-      }, 0);
-    });
-    button.addEventListener("click", function () {
-      if (pinned === brand.id) {
-        pinned = null;
-        setOpen(button, false);
-      } else {
-        pinned = brand.id;
-        setOpen(button, true);
-      }
+    link.addEventListener("focus", function () { place(link, pop); });
+    wrap.addEventListener("pointerenter", function (event) {
+      if (event.pointerType === "mouse") place(link, pop);
     });
 
-    wrap.appendChild(button);
+    wrap.appendChild(link);
+    wrap.appendChild(info);
     wrap.appendChild(pop);
     return wrap;
   }
 
-  function setOpen(button, open) {
-    var pop = document.getElementById(button.getAttribute("aria-controls"));
-    if (!pop) return;
-    if (open) {
-      root.querySelectorAll(".brand-tile[aria-expanded='true']").forEach(function (other) {
-        if (other !== button) setOpen(other, false);
-      });
-    }
-    button.setAttribute("aria-expanded", open ? "true" : "false");
-    pop.hidden = !open;
-    button.parentElement.classList.toggle("is-open", open);
-    if (open) place(button, pop);
-    if (!open && pinned === button.getAttribute("data-id") && hover !== button.getAttribute("data-id")) {
-      pinned = null;
-    }
-  }
-
-  function place(button, pop) {
-    var rect = button.getBoundingClientRect();
+  function place(link, pop) {
+    var rect = link.getBoundingClientRect();
     pop.classList.toggle("is-end", rect.left > window.innerWidth * 0.55);
-    pop.classList.toggle("is-above", rect.bottom + 190 > window.innerHeight && rect.top > 210);
+    pop.classList.toggle("is-above", rect.bottom + 160 > window.innerHeight && rect.top > 180);
   }
 
-  function closeAll() {
-    pinned = null;
-    hover = null;
-    root.querySelectorAll(".brand-tile").forEach(function (button) {
-      setOpen(button, false);
-    });
-  }
-
-  function visibleTiles() {
-    return Array.prototype.filter.call(root.querySelectorAll(".brand-tile"), function (button) {
-      return button.offsetParent !== null;
+  function closeInfo() {
+    root.querySelectorAll(".brand-cell.is-open").forEach(function (cell) {
+      cell.classList.remove("is-open");
+      var button = cell.querySelector(".brand-info");
+      if (button) button.setAttribute("aria-expanded", "false");
     });
   }
 
   document.addEventListener("keydown", function (event) {
-    if (!root) return;
-    if (event.key === "Escape") {
-      var open = root.querySelector(".brand-tile[aria-expanded='true']");
-      if (!open) return;
-      pinned = null;
-      hover = null;
-      suppressFocus = true;
-      setOpen(open, false);
-      open.focus();
-      window.setTimeout(function () { suppressFocus = false; }, 0);
-      return;
-    }
-    var keys = ["ArrowRight", "ArrowLeft", "ArrowDown", "ArrowUp"];
-    if (keys.indexOf(event.key) === -1) return;
-    var current = document.activeElement;
-    if (!current || !current.classList || !current.classList.contains("brand-tile")) return;
-    var tiles = visibleTiles();
-    var index = tiles.indexOf(current);
-    if (index === -1) return;
-    var columns = getColumns();
-    var next = index;
-    if (event.key === "ArrowRight") next = Math.min(tiles.length - 1, index + 1);
-    if (event.key === "ArrowLeft") next = Math.max(0, index - 1);
-    if (event.key === "ArrowDown") next = Math.min(tiles.length - 1, index + columns);
-    if (event.key === "ArrowUp") next = Math.max(0, index - columns);
-    if (next !== index) {
-      event.preventDefault();
-      tiles[next].focus();
-    }
+    if (event.key === "Escape") closeInfo();
   });
 
   document.addEventListener("pointerdown", function (event) {
-    if (!pinned && !root.querySelector(".brand-tile[aria-expanded='true']")) return;
     if (event.target.closest(".brand-cell")) return;
-    closeAll();
+    closeInfo();
   });
-
-  window.addEventListener("resize", function () {
-    var open = root.querySelector(".brand-tile[aria-expanded='true']");
-    if (!open) return;
-    place(open, document.getElementById(open.getAttribute("aria-controls")));
-  });
-
-  function getColumns() {
-    var grid = root.querySelector(".brands-grid");
-    if (!grid) return 2;
-    var style = window.getComputedStyle(grid);
-    return Math.max(1, style.gridTemplateColumns.split(" ").length);
-  }
 })();

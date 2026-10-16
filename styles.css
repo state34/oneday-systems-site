@@ -71,7 +71,7 @@ p { text-wrap: pretty; }
   justify-content: space-between;
   gap: 20px;
 }
-.logo { height: 104px; width: auto; }
+.logo { height: 52px; width: auto; }
 .foot-logo { height: 132px; width: auto; margin: 0 0 12px; }
 .nav-toggle {
   display: none;
@@ -682,7 +682,6 @@ button:disabled { opacity: 0.7; cursor: wait; }
   .principle { grid-template-columns: 1fr; gap: 6px; }
   .section { padding: 56px 0; }
   .nav-toggle { display: inline-flex; }
-  .logo { height: 72px; }
   .foot-logo { height: 112px; }
   .site-nav {
     display: none;
@@ -712,7 +711,7 @@ button:disabled { opacity: 0.7; cursor: wait; }
   :root { --header: 76px; }
   .wrap, .wrap-s, .header-inner { width: min(var(--max), calc(100% - 32px)); }
   .process, .cards, .cards.three, .callout { grid-template-columns: 1fr; }
-  .logo { height: 64px; }
+  .logo { height: 40px; width: auto; }
   .hero h1 { max-width: none; }
 }
 

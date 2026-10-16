@@ -187,7 +187,16 @@ async function verifyTurnstile(env, token, ip) {
   } catch {
     return { ok: false };
   }
-  return { ok: data.success === true };
+  return { ok: data.success === true && data.action === "contact" && hostnameAllowed(data.hostname) };
+}
+
+function hostnameAllowed(hostname) {
+  if (typeof hostname !== "string") return false;
+  const host = hostname.toLowerCase();
+  if (host === "localhost" || host === "127.0.0.1") return true;
+  if (host === "onedaysystems.com" || host === "www.onedaysystems.com") return true;
+  if (host.endsWith(".oneday-systems-site.pages.dev")) return true;
+  return false;
 }
 
 function isLocal(request) {
@@ -252,22 +261,16 @@ async function sendMail(env, request, fields) {
 }
 
 function reply(request, wantsJson, status, error) {
+  const headers = {
+    "cache-control": "no-store",
+    "x-content-type-options": "nosniff",
+  };
   if (!wantsJson) {
     const flag = status === 200 && !error ? "sent" : "error";
-    return new Response(null, {
-      status: 303,
-      headers: {
-        location: `/contact/?${flag}=1`,
-        "cache-control": "no-store",
-      },
-    });
+    headers.location = `/contact/?${flag}=1`;
+    return new Response(null, { status: 303, headers });
   }
   const body = error ? { ok: false, error } : { ok: true };
-  return new Response(JSON.stringify(body), {
-    status,
-    headers: {
-      "content-type": "application/json; charset=utf-8",
-      "cache-control": "no-store",
-    },
-  });
+  headers["content-type"] = "application/json; charset=utf-8";
+  return new Response(JSON.stringify(body), { status, headers });
 }

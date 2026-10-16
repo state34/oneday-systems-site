@@ -19,19 +19,43 @@ function htmlFiles() {
 }
 
 function parseHeaders(text) {
-  const blocks = {};
-  let path = null;
+  const blocks = [];
+  let current = null;
   for (const line of text.split("\n")) {
-    if (!line.trim()) continue;
+    if (!line.trim() || line.trim().startsWith("#")) continue;
     if (!/^\s/.test(line)) {
-      path = line.trim();
-      blocks[path] = {};
-    } else if (path) {
-      const idx = line.indexOf(":");
-      blocks[path][line.slice(0, idx).trim()] = line.slice(idx + 1).trim();
+      current = { path: line.trim(), ops: [] };
+      blocks.push(current);
+    } else if (current) {
+      const trimmed = line.trim();
+      if (trimmed.startsWith("!")) current.ops.push({ unset: trimmed.slice(1).trim() });
+      else {
+        const idx = trimmed.indexOf(":");
+        current.ops.push({ name: trimmed.slice(0, idx).trim(), value: trimmed.slice(idx + 1).trim() });
+      }
     }
   }
   return blocks;
+}
+
+function matchPath(pattern, path) {
+  const re = new RegExp(`^${pattern.split("*").map((part) => part.replace(/[.+?^${}()|[\]\\]/g, "\\$&")).join(".*")}$`);
+  return re.test(path);
+}
+
+function resolvedHeaders(text, urlPath) {
+  const headers = new Map();
+  for (const block of parseHeaders(text)) {
+    if (!matchPath(block.path, urlPath)) continue;
+    for (const op of block.ops) {
+      if (op.unset) headers.delete(op.unset.toLowerCase());
+      else {
+        const key = op.name.toLowerCase();
+        headers.set(key, headers.has(key) ? `${headers.get(key)}, ${op.value}` : op.value);
+      }
+    }
+  }
+  return headers;
 }
 
 describe("static contact rules", () => {
@@ -89,14 +113,19 @@ describe("static contact rules", () => {
     }
   });
 
-  it("parses _headers and allows Calendly and Turnstile on /contact/", () => {
-    const blocks = parseHeaders(readFileSync(join(root, "_headers"), "utf8"));
-    const csp = blocks["/contact/*"]["Content-Security-Policy"];
-    expect(csp).toContain("https://assets.calendly.com");
+  it("gives /contact/ one CSP that allows Turnstile and Calendly", () => {
+    const text = readFileSync(join(root, "_headers"), "utf8");
+    const contact = resolvedHeaders(text, "/contact/");
+    const csp = contact.get("content-security-policy");
     expect(csp).toContain("https://challenges.cloudflare.com");
     expect(csp).toContain("https://calendly.com");
-    expect(csp).toContain("https://*.calendly.com");
-    expect(blocks["/*"]["Content-Security-Policy"]).toContain("frame-src 'none'");
-    expect(blocks["/api/*"]["Cache-Control"]).toBe("no-store");
+    expect(csp.match(/default-src/g)).toHaveLength(1);
+    expect(csp).not.toContain("frame-src 'none'");
+    expect(contact.get("x-frame-options")).toBe("DENY");
+    const site = resolvedHeaders(text, "/services/it/");
+    expect(site.get("content-security-policy")).toContain("frame-src 'none'");
+    expect(site.get("content-security-policy")).not.toContain("calendly.com");
+    expect(site.get("strict-transport-security")).toContain("max-age=31536000");
+    expect(resolvedHeaders(text, "/api/contact").get("cache-control")).toBe("no-store");
   });
 });

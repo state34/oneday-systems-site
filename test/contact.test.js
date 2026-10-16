@@ -57,12 +57,12 @@ function request(body, { method = "POST", origin, headers = {}, url } = {}) {
   });
 }
 
-function mockFetch({ turnstile = true, resendStatus = 200, resendBody = { id: "email_1" } } = {}) {
+function mockFetch({ turnstile = true, resendStatus = 200, resendBody = { id: "email_1" }, hostname = "site-rebuild.oneday-systems-site.pages.dev", action = "contact" } = {}) {
   const calls = [];
   vi.stubGlobal("fetch", vi.fn(async (url, opts) => {
     calls.push({ url: String(url), opts });
     if (String(url).includes("siteverify")) {
-      return new Response(JSON.stringify({ success: turnstile }), { status: 200 });
+      return new Response(JSON.stringify({ success: turnstile, hostname, action }), { status: 200 });
     }
     if (String(url).includes("api.resend.com")) {
       return new Response(JSON.stringify(resendStatus === 200 ? resendBody : { message: "resend-internal-detail" }), {
@@ -146,6 +146,17 @@ describe("contact function", () => {
     expect(calls.some((c) => c.url.includes("resend"))).toBe(false);
   });
 
+  it("rejects Turnstile from the wrong host or action", async () => {
+    mockFetch({ hostname: "evil.example" });
+    const wrongHost = await post(goodBody());
+    expect(wrongHost.res.status).toBe(400);
+    expect(wrongHost.json.error).toBe("turnstile");
+    mockFetch({ action: "login" });
+    const wrongAction = await post(goodBody());
+    expect(wrongAction.res.status).toBe(400);
+    expect(wrongAction.json.error).toBe("turnstile");
+  });
+
   it("returns 429 once the hourly rate limit is hit", async () => {
     mockFetch();
     const shared = env();
@@ -187,6 +198,7 @@ describe("contact function", () => {
     const { res, json, text } = await post(goodBody());
     expect(res.status).toBe(200);
     expect(json).toEqual({ ok: true });
+    expect(res.headers.get("x-content-type-options")).toBe("nosniff");
     const mail = calls.find((c) => c.url.includes("api.resend.com"));
     const payload = JSON.parse(mail.opts.body);
     expect(payload.to).toEqual([TO]);

@@ -48,7 +48,7 @@
         script.dataset.turnstile = "1";
         script.onload = function () {
           if (!window.turnstile) return;
-          window.turnstile.render(slot, { sitekey: data.turnstileSiteKey });
+          window.turnstile.render(slot, { sitekey: data.turnstileSiteKey, action: "contact" });
         };
         document.body.appendChild(script);
       })

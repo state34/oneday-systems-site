@@ -87,16 +87,17 @@
     if (brand.logo && brand.logoStatus === "ok") {
       var img = document.createElement("img");
       img.src = brand.logo;
-      img.alt = brand.name;
+      img.alt = "";
       img.loading = "lazy";
       img.decoding = "async";
+      button.classList.add("has-logo");
       button.appendChild(img);
-    } else {
-      var mark = document.createElement("span");
-      mark.className = "wordmark";
-      mark.textContent = brand.name;
-      button.appendChild(mark);
     }
+
+    var caption = document.createElement("span");
+    caption.className = "brand-caption";
+    caption.textContent = brand.name;
+    button.appendChild(caption);
 
     var pop = document.createElement("div");
     pop.className = "brand-pop";
@@ -110,8 +111,13 @@
     actions.className = "brand-pop-actions";
     var visit = document.createElement("a");
     visit.href = brand.url;
+    visit.target = "_blank";
     visit.rel = "noopener noreferrer";
     visit.textContent = "Visit site";
+    var visitHint = document.createElement("span");
+    visitHint.className = "sr-only";
+    visitHint.textContent = " (opens in new tab)";
+    visit.appendChild(visitHint);
     var close = document.createElement("button");
     close.type = "button";
     close.className = "brand-close";

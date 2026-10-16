@@ -606,6 +606,22 @@ textarea { min-height: 140px; resize: vertical; }
   color: var(--muted);
   font-size: 0.92rem;
 }
+
+.contact-grid { align-items: start; }
+.hp {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.turnstile-slot { min-height: 70px; margin-top: 4px; }
+.form-status { min-height: 1.4em; margin: 12px 0 0; font-weight: 650; }
+.form-status a { color: var(--navy); font-weight: 700; }
+.schedule-copy { margin: 8px 0 12px; color: var(--muted); }
+.calendly-fallback { margin: 0; }
+.calendly-fallback a { color: var(--navy); font-weight: 700; }
+button:disabled { opacity: 0.7; cursor: wait; }
 @media (min-width: 700px) {
   .brands-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }

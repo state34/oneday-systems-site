@@ -2,9 +2,7 @@
 
 Public marketing site for One Day Systems LLC.
 
-Static HTML and CSS at the repository root. No framework and no build step. Booking uses Google Calendar:
-
-https://calendar.app.google/HEjFgm7BNRwYn7HL8
+Static HTML and CSS at the repository root. No build step. The contact form is a Pages Function. Booking is the Calendly widget on `/contact/#schedule`.
 
 **Tagline:** One Day Systems takes on the tech you keep putting off until “one day.”
 
@@ -40,9 +38,20 @@ No `wrangler.toml`. Connect the Git repo; do not add a build.
 
 ## Contact
 
-- stan@onedaysystems.com
-- expert@onedaysystems.com
-- Office and remit: De Soto, Kansas
+The public site does not publish email addresses. Notes go through `/contact/`. The privacy page keeps both addresses as plain text, with no mailto link.
 
-- Public phone: none on the site. TODO for Stan. Do not invent a number.
+Office and remit: De Soto, Kansas.
+
+Public phone: none on the site. Do not invent a number.
+
+### Env and bindings Eng sets in Pages (Preview and Production)
+
+Do not commit values.
+
+- `RESEND_API_KEY` (secret)
+- `CONTACT_TO`
+- `CONTACT_FROM` (example: `One Day Systems <noreply@onedaysystems.com>`)
+- `TURNSTILE_SITE_KEY` (public; the contact page reads it from `/api/form-config`)
+- `TURNSTILE_SECRET_KEY` (secret)
+- KV namespace binding `CONTACT_RL`
 - `sitemap.xml` and `llms.txt` are at the site root. `robots.txt` points at the sitemap and does not disallow GPTBot, PerplexityBot, Google-Extended, or OAI-SearchBot.

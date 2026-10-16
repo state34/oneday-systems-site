@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { readFileSync, readdirSync, statSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { Window } from "happy-dom";
 
@@ -52,9 +52,9 @@ describe("off-site links and brand captions", () => {
     expect(found.length).toBeGreaterThan(0);
   });
 
-  it("shows a visible name caption on every brand tile", async () => {
+  it("renders logo tiles that open the brand site in a new tab", async () => {
     const data = JSON.parse(readFileSync(join(root, "src/data/brands-we-love.json"), "utf8"));
-    const names = data.sections.flatMap((section) => section.brands.map((brand) => brand.name));
+    const brands = data.sections.flatMap((section) => section.brands);
     const window = new Window({ url: "https://onedaysystems.com/brands/" });
     window.document.body.innerHTML = `
       <p id="brands-intro"></p>
@@ -70,24 +70,46 @@ describe("off-site links and brand captions", () => {
     await new Promise((resolve) => setTimeout(resolve, 30));
 
     const tiles = [...window.document.querySelectorAll(".brand-tile")];
-    expect(tiles).toHaveLength(names.length);
+    expect(tiles).toHaveLength(brands.length);
+    expect(brands.some((brand) => brand.id === "hall-research")).toBe(true);
+    expect(readFileSync(join(root, "brands.js"), "utf8")).not.toContain("innerHTML");
+
     tiles.forEach((tile, index) => {
+      const brand = brands[index];
+      expect(tile.tagName).toBe("A");
+      expect(tile.getAttribute("href")).toBe(brand.url);
+      expect(brand.url.startsWith("https://")).toBe(true);
+      expect(tile.getAttribute("target")).toBe("_blank");
+      expect(tile.getAttribute("rel")).toContain("noopener");
+      expect(tile.getAttribute("rel")).toContain("noreferrer");
+      expect(tile.querySelector(".sr-only")?.textContent).toContain("(opens in new tab)");
       const caption = tile.querySelector(".brand-caption");
-      expect(caption, names[index]).toBeTruthy();
-      expect(caption.textContent).toBe(names[index]);
+      expect(caption?.textContent).toBe(brand.name);
       expect(caption.className).not.toContain("sr-only");
       expect(caption.hidden).toBe(false);
+      const img = tile.querySelector("img");
+      if (brand.id === "community-loudspeakers") {
+        expect(img).toBeNull();
+        expect(brand.logoStatus).toBe("missing");
+        return;
+      }
+      expect(img, brand.id).toBeTruthy();
+      expect(img.getAttribute("alt")).toBe(brand.name);
+      expect(img.getAttribute("loading")).toBe("lazy");
+      expect(img.getAttribute("decoding")).toBe("async");
+      expect(img.getAttribute("src").startsWith("/brands/logos/")).toBe(true);
+      expect(existsSync(join(root, img.getAttribute("src").slice(1)))).toBe(true);
     });
 
-    const visits = [...window.document.querySelectorAll(".brand-pop a")];
-    expect(visits).toHaveLength(names.length);
-    for (const link of visits) {
-      expect(isOffsite(link.href)).toBe(true);
-      expect(link.target).toBe("_blank");
-      expect(link.rel).toContain("noopener");
-      expect(link.rel).toContain("noreferrer");
-      expect(link.querySelector(".sr-only")?.textContent).toContain("(opens in new tab)");
-    }
+    const hall = tiles.find((tile) => tile.getAttribute("data-id") === "hall-research");
+    expect(hall?.getAttribute("href")).toBe("https://www.hallresearch.com");
     await window.happyDOM.abort();
+  });
+
+  it("has no Brands We Love wording left in pages or brand data", () => {
+    const files = walk(root).filter((path) => path.endsWith(".html") || path.endsWith(".json") || path.endsWith(".txt") || path.endsWith(".xml"));
+    for (const file of files) {
+      expect(readFileSync(file, "utf8").toLowerCase(), file).not.toContain("brands we love");
+    }
   });
 });

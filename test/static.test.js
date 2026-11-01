@@ -3,6 +3,7 @@ import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join, relative } from "node:path";
 
 const root = join(import.meta.dirname, "..");
+const site = join(root, "public");
 
 function walk(dir, acc = []) {
   for (const name of readdirSync(dir)) {
@@ -15,7 +16,7 @@ function walk(dir, acc = []) {
 }
 
 function htmlFiles() {
-  return walk(root).filter((path) => path.endsWith(".html"));
+  return walk(site).filter((path) => path.endsWith(".html"));
 }
 
 function parseHeaders(text) {
@@ -60,22 +61,22 @@ function resolvedHeaders(text, urlPath) {
 
 describe("static contact rules", () => {
   it("has no mailto links in HTML or llms.txt", () => {
-    const files = [...htmlFiles(), join(root, "llms.txt")];
+    const files = [...htmlFiles(), join(site, "llms.txt")];
     for (const file of files) {
-      expect(readFileSync(file, "utf8"), relative(root, file)).not.toContain("mailto:");
+      expect(readFileSync(file, "utf8"), relative(site, file)).not.toContain("mailto:");
     }
   });
 
   it("keeps stan@ only on the privacy page", () => {
-    const files = [...htmlFiles(), join(root, "llms.txt"), join(root, "README.md")];
+    const files = [...htmlFiles(), join(site, "llms.txt"), join(root, "README.md")];
     const hits = files.filter((file) => readFileSync(file, "utf8").includes("stan@onedaysystems.com"));
-    expect(hits.map((file) => relative(root, file))).toEqual(["privacy/index.html"]);
+    expect(hits.map((file) => relative(root, file))).toEqual(["public/privacy/index.html"]);
   });
 
   it("keeps expert@ only on the privacy page", () => {
     const hits = htmlFiles().filter((file) => readFileSync(file, "utf8").includes("expert@onedaysystems.com"));
-    expect(hits.map((file) => relative(root, file))).toEqual(["privacy/index.html"]);
-    const privacy = readFileSync(join(root, "privacy/index.html"), "utf8");
+    expect(hits.map((file) => relative(root, file))).toEqual(["public/privacy/index.html"]);
+    const privacy = readFileSync(join(site, "privacy/index.html"), "utf8");
     expect(privacy).not.toContain("mailto:");
   });
 
@@ -98,7 +99,7 @@ describe("static contact rules", () => {
   });
 
   it("puts Calendly on the contact page only", () => {
-    const contact = readFileSync(join(root, "contact/index.html"), "utf8");
+    const contact = readFileSync(join(site, "contact/index.html"), "utf8");
     expect(contact).toContain('class="calendly-inline-widget"');
     expect(contact).toContain('data-url="https://calendly.com/stan-state34/30min?hide_gdpr_banner=1"');
     expect(contact).toContain('href="https://calendly.com/stan-state34/30min"');
@@ -114,7 +115,7 @@ describe("static contact rules", () => {
   });
 
   it("gives /contact/ one CSP that allows Turnstile and Calendly", () => {
-    const text = readFileSync(join(root, "_headers"), "utf8");
+    const text = readFileSync(join(site, "_headers"), "utf8");
     const contact = resolvedHeaders(text, "/contact/");
     const csp = contact.get("content-security-policy");
     expect(csp).toContain("https://challenges.cloudflare.com");
@@ -122,10 +123,10 @@ describe("static contact rules", () => {
     expect(csp.match(/default-src/g)).toHaveLength(1);
     expect(csp).not.toContain("frame-src 'none'");
     expect(contact.get("x-frame-options")).toBe("DENY");
-    const site = resolvedHeaders(text, "/services/it/");
-    expect(site.get("content-security-policy")).toContain("frame-src 'none'");
-    expect(site.get("content-security-policy")).not.toContain("calendly.com");
-    expect(site.get("strict-transport-security")).toContain("max-age=31536000");
+    const pages = resolvedHeaders(text, "/services/it/");
+    expect(pages.get("content-security-policy")).toContain("frame-src 'none'");
+    expect(pages.get("content-security-policy")).not.toContain("calendly.com");
+    expect(pages.get("strict-transport-security")).toContain("max-age=31536000");
     expect(resolvedHeaders(text, "/api/contact").get("cache-control")).toBe("no-store");
   });
 });

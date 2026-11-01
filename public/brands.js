@@ -2,7 +2,7 @@
   var root = document.getElementById("brands-root");
   if (!root) return;
 
-  fetch("/src/data/brands-we-love.json")
+  fetch("/data/brands-we-love.json")
     .then(function (res) {
       if (!res.ok) throw new Error("load");
       return res.json();
